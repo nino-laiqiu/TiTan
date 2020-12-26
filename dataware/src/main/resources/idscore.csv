@@ -1,0 +1,5 @@
+deviceid,account,timestamp,score
+d00,a00,11000,600
+d01,a01,12235,400
+d02,a02,12445,300
+d02,a12,12576,100

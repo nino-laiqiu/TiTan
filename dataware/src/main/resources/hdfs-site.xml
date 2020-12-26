@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+<!-- 集群的namenode的位置  datanode能通过这个地址注册-->
+	<property>
+	     <name>dfs.namenode.rpc-address</name>
+		 <value>linux03:8020</value>
+	</property>
+	 <!-- namenode存储元数据的位置 -->
+	<property>
+	     <name>dfs.namenode.name.dir</name>
+		 <value>/opt/hdpdata/name</value>
+	</property>
+	 <!-- datanode存储数据的位置 -->
+	<property>
+	     <name>dfs.datanode.data.dir</name>
+		 <value>/opt/hdpdata/data</value>
+	</property>
+	 <!-- secondary namenode机器的位置-->
+	<property>
+	<name>dfs.namenode.secondary.http-address</name>
+		<value>linux04:50090</value>
+	</property>
+	<property>
+		<name>dfs.permissions.enabled</name>
+		<value>false</value>
+		<description>
+			If "true", enable permission checking in HDFS.
+			If "false", permission checking is turned off,
+			but all other behavior is unchanged.
+			Switching from one parameter value to the other does not change the mode,
+			owner or group of files or directories.
+		</description>
+	</property>
+</configuration>
