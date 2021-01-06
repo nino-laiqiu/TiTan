@@ -64,7 +64,8 @@ object DwdEtl {
                beanslist(beanindex + 1).newsession = uuid
              }
            }*/
-        //方案二
+        //什么是一次会话,切分会话,切分的一次会话中时间间隔长的某段
+        //方案二:
         for (beanindex <- 0 until beanslist.length - 1) {
           beanslist(beanindex).newsession = uuid
           if ((beanindex < beanslist.size - 1) && (beanslist(beanindex + 1).timeStamp - beanslist(beanindex).timeStamp) < (30 * 60 * 1000)) {
